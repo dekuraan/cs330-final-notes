@@ -4,7 +4,7 @@
 tree: a connected undirected graph with no simple circuits
 
 ### Theorem 1
-An undirected graph is a tree if and only if there is a unique simple path between any two of its vertices.
+> An undirected graph is a tree if and only if there is a unique simple path between any two of its vertices.
 
 rooted tree: A rooted tree is a tree in which one vertex has been designated as the root and every edge is directed away from the root.
 
@@ -31,16 +31,16 @@ m-ary tree: A rooted tree is called an m-ary tree if every internal vertex has n
 ordered rooted tree: An ordered rooted tree is a rooted tree where the children of each internal vertex are ordered
 
 ### Binary trees
-if an internal vertex has two children, the first child is called the left child and the second child is called the right child. The tree rooted at the left child of a vertex is called the left subtree of this vertex, and the tree rooted at the right child of a vertex is called the right subtree of the vertex.
+> if an internal vertex has two children, the first child is called the left child and the second child is called the right child. The tree rooted at the left child of a vertex is called the left subtree of this vertex, and the tree rooted at the right child of a vertex is called the right subtree of the vertex.
 
 ### Theorem 2
-A tree with n vertices has n − 1 edges.
+> A tree with n vertices has n − 1 edges.
 
 ### Theorem 3
-A full m-ary tree with i internal vertices contains n = mi + 1 vertices.
+> A full m-ary tree with i internal vertices contains n = mi + 1 vertices.
 
 ### Theorem 4
-A full m-ary tree with
+> A full m-ary tree with
 1. n vertices has i = (n − 1)/m internal vertices and l = [(m − 1)n + 1]/m leaves,
 2. i internal vertices has n = mi + 1 vertices and l = (m − 1)i + 1 leaves,
 3. l leaves has n = (ml − 1)/(m − 1) vertices and i = (l − 1)/(m − 1) internal vertices.
@@ -53,14 +53,13 @@ height: The height of a rooted tree is the maximum of the levels of vertices
 balanced: A rooted m-ary tree of height h is balanced if all leaves are at levels h or h − 1.
 
 ### Theorem 5
-There are at most $m^h$ leaves in an m-ary tree of height h.
+> There are at most $m^h$ leaves in an m-ary tree of height h.
 
 ### COROLLARY 1
-If an m-ary tree of height h has l leaves, then $h ≥ ⌈\log m l⌉$. If the m-ary tree is full and balanced, then $h = ⌈logm l⌉$. (We are using the ceiling function here. Recall that ⌈x⌉ is the smallest integer greater than or equal to x.)
+> If an m-ary tree of height h has l leaves, then $h ≥ ⌈\log m l⌉$. If the m-ary tree is full and balanced, then $h = ⌈logm l⌉$. (We are using the ceiling function here. Recall that ⌈x⌉ is the smallest integer greater than or equal to x.)
 
 ## 11.2 Applications of trees
 binary search tree: a binary tree in which each child of a vertex is designated as a right or left child, no vertex has more than one right child or left child, and each vertex is labeled with a key, which is one of the items. Furthermore, vertices are assigned keys so that the key of a vertex is both larger than the keys of all vertices in its left subtree and smaller than the keys of all vertices in its right subtree.
-### ALGORITHM 1 Locating an Item in or Adding an Item to a Binary Search Tree.
 ```python
 procedure insertion(T: binary search tree,
 x: item)
@@ -81,13 +80,13 @@ return v {v = location of x}
 decision tree: A rooted tree in which each internal vertex corresponds to a decision, with a subtree at these vertices for each possible outcome of the decision
 
 ### THEOREM 1
-A sorting algorithm based on binary comparisons requires at least ⌈log2 n!⌉ comparisons.
+> > A sorting algorithm based on binary comparisons requires at least ⌈log2 n!⌉ comparisons.
 
 ### COROLLARY 1
-The number of comparisons used by a sorting algorithm to sort n elements based on binary comparisons is Ω(n log n).
+> The number of comparisons used by a sorting algorithm to sort n elements based on binary comparisons is Ω(n log n).
 
 ### THEOREM 2
-The average number of comparisons used by a sorting algorithm to sort n elements based on binary comparisons is Ω(n log n).
+> The average number of comparisons used by a sorting algorithm to sort n elements based on binary comparisons is Ω(n log n).
 
 prefix codes: One way to ensure that no bit string corresponds to more than one sequence of letters is to encode letters so that the bit string for a letter never occurs as the first part of the bit string for another letter.
 
@@ -104,12 +103,12 @@ game trees: We model such
 games using game trees; the vertices of these trees represent the positions that a game can be in as it progresses; the edges represent legal moves between these positions.
 
 ### Definition 1
-The value of a vertex in a game tree is defined recursively as:
+> The value of a vertex in a game tree is defined recursively as:
 1. the value of a leaf is the payoff to the first player when the game terminates in the position represented by this leaf.
 2. the value of an internal vertex at an even level is the maximum of the values of its children, and the value of an internal vertex at an odd level is the minimum of the values of its children.
 
 ### THEOREM 3
-The value of a vertex of a game tree tells us the payoff to the first player if both players follow the minmax strategy and play starts from the position represented by this vertex.
+> The value of a vertex of a game tree tells us the payoff to the first player if both players follow the minmax strategy and play starts from the position represented by this vertex.
 
 ## 11.3 Tree Traversal
 
@@ -119,7 +118,7 @@ universal address system: `leaf.leaf.leaf.leaf...`
 ![Tree Traversals](https://media.geeksforgeeks.org/wp-content/cdn-uploads/Preorder-from-Inorder-and-Postorder-traversals.jpg)
 
 ### Preorder traversal
-Let T be an ordered rooted tree with root r. If T consists only of r, then r is the preorder traversal of T. Otherwise, suppose that T1 , T2 , … , Tn are the sub trees at r from left to right in T. The preorder traversal begins by visiting r. It continues by traversing T1 in preorder, then T2 in preorder, and so on, until Tn is traversed in preorder.
+> Let T be an ordered rooted tree with root r. If T consists only of r, then r is the preorder traversal of T. Otherwise, suppose that T1 , T2 , … , Tn are the sub trees at r from left to right in T. The preorder traversal begins by visiting r. It continues by traversing T1 in preorder, then T2 in preorder, and so on, until Tn is traversed in preorder.
 ```python
 procedure preorder(T: ordered rooted tree)
 r := root of T
@@ -131,7 +130,7 @@ for each child c of r from left to right
 traverse prefix form
 
 ### Inorder Traversal
-Let T be an ordered rooted tree with root r. If T consists only of r, then r is the inorder traversal of T. Otherwise, suppose that T1 , T2 , … , Tn are the subtrees at r from left to right. The inorder traversal begins by traversing T1 in inorder, then visiting r. It continues by traversing T2 in inorder, then T3 in inorder, … , and finally Tn in inorder.
+> Let T be an ordered rooted tree with root r. If T consists only of r, then r is the inorder traversal of T. Otherwise, suppose that T1 , T2 , … , Tn are the subtrees at r from left to right. The inorder traversal begins by traversing T1 in inorder, then visiting r. It continues by traversing T2 in inorder, then T3 in inorder, … , and finally Tn in inorder.
 ```python
 procedure inorder(T: ordered rooted tree)
 r := root of T
@@ -148,7 +147,7 @@ else
 traverse infix form
 
 ### Postorder traversal
-Let T be an ordered rooted tree with root r. If T consists only of r, then r is the postorder traversal of T. Otherwise, suppose that T1 , T2 , … , Tn are the subtrees at r from left to right. The postorder traversal begins by traversing T1 in postorder, then T2 in postorder, … , then Tn in postorder, and ends by visiting r.
+> Let T be an ordered rooted tree with root r. If T consists only of r, then r is the postorder traversal of T. Otherwise, suppose that T1 , T2 , … , Tn are the subtrees at r from left to right. The postorder traversal begins by traversing T1 in postorder, then T2 in postorder, … , then Tn in postorder, and ends by visiting r.
 ```python
 procedure postorder(T: ordered rooted tree)
 r := root of T
@@ -161,10 +160,10 @@ traverse postfix form
 
 ## 11.4: Spanning Trees
 ### Definition 1
-Let G be a simple graph. A spanning tree of G is a subgraph of G that is a tree containing every vertex of G.
+> Let G be a simple graph. A spanning tree of G is a subgraph of G that is a tree containing every vertex of G.
 
 ### THEOREM 1
-A simple graph is connected if and only if it has a spanning tree.
+> A simple graph is connected if and only if it has a spanning tree.
 
 depth-first search: can be used to build a spanning tree
 
@@ -206,7 +205,7 @@ while L is not empty
 ## Minimum Spanning Trees
 
 ### Definition 1
-A minimum spanning tree in a connected weighted graph is a spanning tree that has the smallest possible sum of weights of its edges.
+> A minimum spanning tree in a connected weighted graph is a spanning tree that has the smallest possible sum of weights of its edges.
 
 ### ALGORITHM 1 Prim’s Algorithm.
 ```python
