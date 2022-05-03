@@ -80,7 +80,7 @@ return v {v = location of x}
 decision tree: A rooted tree in which each internal vertex corresponds to a decision, with a subtree at these vertices for each possible outcome of the decision
 
 ### THEOREM 1
-> > A sorting algorithm based on binary comparisons requires at least ⌈log2 n!⌉ comparisons.
+> A sorting algorithm based on binary comparisons requires at least ⌈log2 n!⌉ comparisons.
 
 ### COROLLARY 1
 > The number of comparisons used by a sorting algorithm to sort n elements based on binary comparisons is Ω(n log n).
